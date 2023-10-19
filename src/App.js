@@ -17,6 +17,7 @@ function App() {
         <Route index element={<Home/>}/>
         <Route path="host" element={<HostLayout/>}/>
         <Route path="about" element={<About/>}/>
+        <Route path="vans" element={<Vans/>}/>
 
       </Route>
     </Routes>

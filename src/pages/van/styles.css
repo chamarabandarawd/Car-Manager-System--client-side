@@ -1,0 +1,137 @@
+.vans-outer {
+    min-height: 82.7vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.cards-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    max-width: 94vw;
+}
+
+.card {
+    text-align: center;
+    background-color: #e77e2227;
+    padding: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.card>img {
+    max-width: 21vw;
+    border-radius: 5px;
+}
+
+.van-name {
+    font-weight: bold;
+}
+
+.van-price {
+    font-size: small;
+}
+
+.van-type {
+    padding: 5px;
+    background-color: #e77e22f3;
+    border-radius: 5px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent overlay color */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+    /* Show the overlay on hover */
+}
+
+.overflow-button {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #ffffff9f;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+
+/* Vand details */
+
+.vansDetails-outer {
+    min-height: 82.7vh;
+    height: 100%;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vanDetails-inner {
+    padding: 20px;
+    max-height: 60vh;
+    display: flex;
+    gap: 20px;
+    background-color: #ffffff8f;
+}
+.van-image {
+    border-radius: 10px;
+    height: 60vh;
+}
+
+.van-details {
+    border-radius: 10px;
+    background-color: #ffffffbe;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.details-price{
+    font-weight: bold;
+}
+.details-type{
+    font-weight: bold;
+    color: white;
+    background-color:  #da5230;
+    padding: 5px 20px;
+    width: 80px;
+    border-radius: 10px;
+    text-align: center;
+}
+.rent-button{
+    font-weight: bold;
+    color: white;
+    background-color:  #16a085;
+    padding: 5px 20px;
+    width: 100px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none; 
+}
+
+.back-button{
+    text-decoration: none;
+    width: 130px;
+    font-size: small;
+}
