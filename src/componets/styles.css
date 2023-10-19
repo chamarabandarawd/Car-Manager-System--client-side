@@ -1,0 +1,52 @@
+
+/* Header Styles */
+
+.my-header{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding-top: 5px;
+height: 10vh;
+padding-left: 3vw;
+padding-right: 3vw;
+}
+
+.logo{
+flex: 1;
+font-weight: bolder;
+font-size: larger;
+color: #974d3b;
+}
+
+.my-links{
+ display: flex;
+ gap: 20px;
+}
+
+.nav-link{
+    font-weight: bold;
+    text-decoration: none;
+    color: #974d3b;
+    
+}
+
+.nav-link:hover,.nav-link-active{
+    color: #e17055;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+/* Footer */
+
+.my-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(54, 54, 54);
+    height: 6vh;
+}
+
+
