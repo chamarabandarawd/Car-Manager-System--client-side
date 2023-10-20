@@ -135,3 +135,14 @@
     width: 130px;
     font-size: small;
 }
+.back-button:hover{
+    background-color:  #16a0843f;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+
+.rent-button:hover{
+    background-color:  #16a08481;
+}
+

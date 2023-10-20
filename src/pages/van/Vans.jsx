@@ -6,12 +6,12 @@ const Vans = () => {
   const [vans, setVans] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:8080/vans")
+    fetch("https://cmsv1.onrender.com/vans")
       .then(res => res.json())
       .then(data => setVans(data))
 
   }, [])
-  const vanElements = vans.map(({ id, name, price, imgUrl,type }) => (
+  const vanElements = vans?.map(({ id, name, price, imgUrl,type }) => (
     <div key={id} className='card'> 
       <div class="overlay">
         <NavLink 
@@ -30,12 +30,11 @@ const Vans = () => {
   return (
     <section className='vans-outer'>
       <h1>Explore our van options</h1>
+      {vans ? 
       <div className="cards-area">
-
         {vanElements}
-
-
       </div>
+      : <h1>Loading...</h1>}
 
     </section>
   )

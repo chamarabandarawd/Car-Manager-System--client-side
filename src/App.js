@@ -21,7 +21,6 @@ function App() {
         <Route path="vans/:id" element={<VanDetails/>}/>
         <Route path="cars" element={<Cars/>}/>
         <Route path="rent" element={<Rent/>}/>
-
       </Route>
     </Routes>
 </BrowserRouter>
