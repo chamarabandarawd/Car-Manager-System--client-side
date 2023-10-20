@@ -30,12 +30,9 @@ const Vans = () => {
   return (
     <section className='vans-outer'>
       <h1>Explore our van options</h1>
-      {vans ? 
       <div className="cards-area">
         {vanElements}
       </div>
-      : <h1>Loading...</h1>}
-
     </section>
   )
 }
