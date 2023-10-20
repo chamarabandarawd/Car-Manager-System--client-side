@@ -11,7 +11,7 @@ const VanDetails = () => {
         fetch(`https://cmsv1.onrender.com/vans/${id}`)
             .then(res => res.json())
             .then(data => setVan(data))
-    }, [])
+    }, [id])
 
     console.log(van)
     return (
