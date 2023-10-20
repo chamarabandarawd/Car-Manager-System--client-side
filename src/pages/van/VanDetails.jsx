@@ -8,7 +8,7 @@ const VanDetails = () => {
     const [van, setVan] = useState(null)
 
     useEffect(() => {
-        fetch(`https://cmsv1.onrender.com/vans/${id}`)
+        fetch(`http://localhost:8080/vans/${id}`)
             .then(res => res.json())
             .then(data => setVan(data))
     }, [id])

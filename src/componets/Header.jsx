@@ -28,6 +28,10 @@ const Header = () => {
                     to={"/cars"}
                     className={({isActive})=>isActive ? "nav-link-active" : "nav-link"}
                 >Cars</NavLink>
+                <NavLink
+                    to={"/admin"}
+                    className={({isActive})=>isActive ? "nav-link-active" : "nav-link"}
+                >Admin Dashboard</NavLink>
             </div>
         </header>
     )

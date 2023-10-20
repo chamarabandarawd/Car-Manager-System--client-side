@@ -1,0 +1,52 @@
+/* Header */
+
+.my-header{
+display: flex;
+gap: 10px;
+}
+
+.my-link{
+
+}
+
+/* Van */
+
+.container{
+    min-height: 70vh;
+    height: 100%;
+}
+.table-header{
+    padding-left: 3vw;
+    padding-right: 3vw;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 3fr 2fr 2fr;
+    background-color: #f58f8f11;
+    margin-bottom: 2px;
+    align-items: center;
+}
+.table-header:hover{
+    background-color: #f58f8f31;
+    cursor: pointer;
+
+}
+.cell-header{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    height: auto;
+    padding: 2px;
+    border: solid 1px  #f58f8f31;
+    border-radius: 5px;
+}
+.cell{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    padding: 2px;
+    border: solid 1px  #f58f8f31;
+    border-radius: 5px;
+}
+.cell>img{
+    height: 150px;
+    border-radius: 5px;
+}

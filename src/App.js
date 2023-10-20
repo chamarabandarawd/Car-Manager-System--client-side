@@ -7,6 +7,10 @@ import Vans from "./pages/van/Vans";
 import Cars from "./pages/cars/Cars";
 import VanDetails from "./pages/van/VanDetails";
 import Rent from "./pages/Rent";
+import AdminLayout from "./pages/admin/AdminLayout";
+import AdminVan from "./pages/admin/AdminVan";
+import AdminCar from "./pages/admin/AdminCar";
+import AdminVanDetails from "./pages/admin/AdminVanDetails";
 
 
 function App() {
@@ -21,6 +25,16 @@ function App() {
         <Route path="vans/:id" element={<VanDetails/>}/>
         <Route path="cars" element={<Cars/>}/>
         <Route path="rent" element={<Rent/>}/>
+
+
+        <Route path="admin" element={<AdminLayout/>}>
+          <Route index element={<AdminVan/>}/>
+          <Route path="cars" element={<AdminCar/>}/>
+          <Route path="vans/:id" element={<AdminVanDetails/>}/>
+
+        </Route>
+
+        
       </Route>
     </Routes>
 </BrowserRouter>

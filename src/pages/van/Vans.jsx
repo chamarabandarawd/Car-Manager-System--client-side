@@ -6,7 +6,7 @@ const Vans = () => {
   const [vans, setVans] = useState([])
 
   useEffect(() => {
-    fetch("https://cmsv1.onrender.com/vans")
+    fetch("http://localhost:8080/vans")
       .then(res => res.json())
       .then(data => setVans(data))
 
