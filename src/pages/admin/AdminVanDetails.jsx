@@ -13,7 +13,7 @@ const AdminVanDetails = () => {
     fetch(`http://localhost:8080/vans/${id}`)
       .then(res => res.json())
       .then(data => setVan(data))
-  }, [])
+  }, [id])
 
 
   const handleSave = () => {

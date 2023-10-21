@@ -5,7 +5,6 @@ import EditIcon from '@mui/icons-material/Edit';
 import { NavLink } from 'react-router-dom';
 import "./styles.css"
 
-const vans = [1, 2, 3, 4, 5]
 const AdminVan = () => {
 
     const [vans, setVans] = useState([]);
