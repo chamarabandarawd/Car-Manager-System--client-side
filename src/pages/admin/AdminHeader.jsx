@@ -7,13 +7,19 @@ const AdminHeader = () => {
     <header className='my-header'>
         <NavLink
         to={'.'}
-        className={"my-link"}
+        end
+        className={({isActive})=>isActive ? "nav-link-active" : "nav-link"}
         > Vans
         </NavLink>
         <NavLink
         to={'cars'}
-        className={"my-link"}
+        className={({isActive})=>isActive ? "nav-link-active" : "nav-link"}
         > Cars
+        </NavLink>
+        <NavLink
+        to={'addVehicle'}
+        className={({isActive})=>isActive ? "nav-link-active" : "nav-link"}
+        > Add Vehicle
         </NavLink>
     </header>
   )

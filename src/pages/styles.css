@@ -14,11 +14,11 @@
     flex-direction: column;
     gap: 30px;
     align-items: center;
+    justify-content: center;
     
   }
 
   .home-outer>h1{
-    padding-top: 80px;
     font-size:xx-large
   }
 

@@ -11,6 +11,7 @@ import AdminLayout from "./pages/admin/AdminLayout";
 import AdminVan from "./pages/admin/AdminVan";
 import AdminCar from "./pages/admin/AdminCar";
 import AdminVanDetails from "./pages/admin/AdminVanDetails";
+import AddVehicle from "./pages/admin/AddVehicle";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="admin" element={<AdminLayout/>}>
           <Route index element={<AdminVan/>}/>
           <Route path="cars" element={<AdminCar/>}/>
+          <Route path="addVehicle" element={<AddVehicle/>}/>
           <Route path="vans/:id" element={<AdminVanDetails/>}/>
 
         </Route>

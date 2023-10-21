@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
+import CircularProgress from '@mui/material/CircularProgress';
 import "./styles.css"
 
 const VanDetails = () => {
@@ -36,7 +37,7 @@ const VanDetails = () => {
                     </div>
                 </div>
 
-                : <h1>Loading...</h1>}
+                : <CircularProgress />}
 
         </section>
     )

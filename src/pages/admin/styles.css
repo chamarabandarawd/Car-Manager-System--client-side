@@ -1,21 +1,34 @@
 /* Header */
 
-.my-header{
-display: flex;
-gap: 10px;
+.my-header {
+    display: flex;
+    gap: 10px;
 }
 
-.my-link{
+.my-links{
+    display: flex;
+    gap: 20px;
+   }
+   
+   .nav-link{
+       font-weight: bold;
+       text-decoration: none;
+       color: #974d3b;
+       
+   }
+   
+   .nav-link:hover,.nav-link-active{
+       color: #e17055;
+       font-weight: bold;
+       text-decoration: none;
+   }
 
-}
-
-/* Van */
-
-.container{
+.container {
     min-height: 70vh;
     height: 100%;
 }
-.table-header{
+
+.table-header {
     padding-left: 3vw;
     padding-right: 3vw;
     display: grid;
@@ -24,29 +37,63 @@ gap: 10px;
     margin-bottom: 2px;
     align-items: center;
 }
-.table-header:hover{
+
+.table-header:hover {
     background-color: #f58f8f31;
     cursor: pointer;
 
 }
-.cell-header{
+
+.cell-header {
     display: flex;
     justify-content: center;
     font-weight: bold;
     height: auto;
     padding: 2px;
-    border: solid 1px  #f58f8f31;
+    border: solid 1px #f58f8f31;
     border-radius: 5px;
 }
-.cell{
+
+.cell {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100%;
     padding: 2px;
-    border: solid 1px  #f58f8f31;
+    border: solid 1px #f58f8f31;
     border-radius: 5px;
 }
-.cell>img{
+
+.cell>img {
     height: 150px;
     border-radius: 5px;
+}
+
+
+/* admin-Van-detail- */
+
+
+.van-deatils-outer {
+    min-height: 72vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+
+}
+
+.vehical-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.vehical-image>img{
+    height: 400px;
+    border-radius: 10px;
+}
+
+.vehicale-details{
+    
 }

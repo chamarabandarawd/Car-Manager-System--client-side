@@ -1,20 +1,41 @@
 import React, { useEffect, useState } from 'react'
-
-import "./styles.css"
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import { NavLink } from 'react-router-dom';
+import "./styles.css"
 
-const vans=[1,2,3,4,5]
+const vans = [1, 2, 3, 4, 5]
 const AdminVan = () => {
 
-    const[vans,setVans]=useState([]);
+    const [vans, setVans] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:8080/vans")
-          .then(res => res.json())
-          .then(data => setVans(data))
-    
-      }, [])
-      console.log(vans)
+            .then(res => res.json())
+            .then(data => setVans(data))
+
+    }, [vans])
+
+    function deleteHandle(id){
+        fetch(`http://localhost:8080/vans/${id}`,{
+            method:"DELETE",
+        }).then(res=>{
+      
+            if(res.status===200){       
+            fetch("http://localhost:8080/vans")
+            .then(res => res.json())
+            .then(data => setVans(data))
+            alert(`${id} will be deleted!`);
+            return  
+            }
+            else{
+                alert(`${id} Failed to delete resource!`) 
+                throw new Error("Failed to delete resource!")
+            }
+            
+        })
+    }
 
     return (
         <div className='container'>
@@ -26,19 +47,28 @@ const AdminVan = () => {
                 <div className='cell-header'>Price</div>
                 <div className='cell-header'>Option</div>
             </div>
-            {vans?.map(({id,name,imgUrl,price,description,type})=>(
-                <NavLink
-                to={`vans/:${id}`}>
+            {vans?.map(({ id, name, imgUrl, price, description, type }) => (
 
-            <div className='table-header' key={id}>
-                <div className='cell'>{id}</div>
-                <div className='cell'><img alt={name} src={imgUrl}/></div>
-                <div className='cell'>{name}</div>
-                <div className='cell'>{description}</div>
-                <div className='cell'>{price}<span>.00 LKR/day</span></div>
-                <div className='cell'>Option</div>
-            </div>
-                </NavLink>
+
+                <div className='table-header' key={id}>
+                    <div className='cell'>{id}</div>
+                    <div className='cell'><img alt={name} src={imgUrl} /></div>
+                    <div className='cell'>{name}</div>
+                    <div className='cell'>{description}</div>
+                    <div className='cell'>{price}<span>.00 LKR/day</span></div>
+                    <div className='cell'>
+                        <NavLink
+                            to={`vans/${id}`}>
+                        <IconButton aria-label="delete" size="large">
+                            <EditIcon fontSize="inherit" />
+                        </IconButton>
+                        </NavLink>
+                        <IconButton onClick={()=>deleteHandle(id)} aria-label="delete" size="large">
+                            <DeleteIcon fontSize="inherit" />
+                        </IconButton>
+                    </div>
+                </div>
+
 
             ))}
         </div>
