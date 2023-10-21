@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./styles.css"
 import { NavLink } from 'react-router-dom'
-import CircularProgress from '@mui/material/CircularProgress';
 
 const Vans = () => {
   const [vans, setVans] = useState([])
