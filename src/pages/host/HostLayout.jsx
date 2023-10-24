@@ -1,8 +1,13 @@
 import React from 'react'
+import HostNavBar from './HostNavBar'
+import { Outlet } from 'react-router-dom'
 
 const HostLayout = () => {
   return (
-    <div>HostLayout</div>
+    <>
+    <HostNavBar/>
+    <Outlet/>
+    </>
   )
 }
 

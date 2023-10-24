@@ -12,6 +12,9 @@ import AdminVan from "./pages/admin/AdminVan";
 import AdminCar from "./pages/admin/AdminCar";
 import AdminVanDetails from "./pages/admin/AdminVanDetails";
 import AddVehicle from "./pages/admin/AddVehicle";
+import DashBoard from "./pages/host/DashBoard";
+import Income from "./pages/host/Income";
+import { Reviews } from "@mui/icons-material";
 
 
 function App() {
@@ -20,7 +23,13 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home/>}/>
-        <Route path="host" element={<HostLayout/>}/>
+
+        <Route path="host" element={<HostLayout/>}>
+          <Route index element={<DashBoard/>}/>
+          <Route path="income" element={<Income/>}/>
+          <Route path="review" element={<Reviews/>}/>
+        </Route>
+
         <Route path="about" element={<About/>}/>
         <Route path="vans" element={<Vans/>}/>
         <Route path="vans/:id" element={<VanDetails/>}/>
@@ -34,9 +43,7 @@ function App() {
           <Route path="addVehicle" element={<AddVehicle/>}/>
           <Route path="vans/:id" element={<AdminVanDetails/>}/>
 
-        </Route>
-
-        
+        </Route>  
       </Route>
     </Routes>
 </BrowserRouter>

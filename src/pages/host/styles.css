@@ -1,0 +1,18 @@
+.my-links {
+    display: flex;
+    gap: 20px;
+}
+   
+   .nav-link{
+       font-weight: bold;
+       text-decoration: none;
+       color: #974d3b;
+       
+   }
+   
+   .nav-link:hover,.nav-link-active{
+       color: #e17055;
+       font-weight: bold;
+       text-decoration: none;
+   }
+   
