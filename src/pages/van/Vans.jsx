@@ -4,7 +4,7 @@ import { Link, NavLink, useSearchParams } from 'react-router-dom'
 
 const Vans = () => {
 
-  const[searchParams,setSearchParams]=useSearchParams();
+  // const[searchParams,setSearchParams]=useSearchParams();
 
   const [vans, setVans] = useState([])
 
