@@ -36,17 +36,17 @@ const Vans = () => {
     </div>
   ))
 
-  const hanadleFilterChainge=(key,value)=>{
-    setSearchParams(prevParam=>{
-      if(value===null){
-        prevParam.delete(key)
-      }else{
-        prevParam.set(key,value)
-      }
-      console.log(prevParam)
-      return prevParam
-    })
-  }
+  // const hanadleFilterChainge=(key,value)=>{
+  //   setSearchParams(prevParam=>{
+  //     if(value===null){
+  //       prevParam.delete(key)
+  //     }else{
+  //       prevParam.set(key,value)
+  //     }
+  //     console.log(prevParam)
+  //     return prevParam
+  //   })
+  // }
 
   return (
     <section className='vans-outer'>

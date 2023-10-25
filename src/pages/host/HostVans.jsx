@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Col,  Nav,  Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import "./styles.css"
-import { Link,NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const HostVans = () => {
     const [vans, setVans] = useState([]);
