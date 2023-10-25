@@ -5,6 +5,7 @@ const HostNavBar = () => {
     return (
         <header className='my-links'>
             <NavLink
+                end
                 to={"."}
                 className={({ isActive }) => isActive ? "nav-link-active" : "nav-link"}
             >Dashboard</NavLink>
@@ -12,6 +13,10 @@ const HostNavBar = () => {
                 to={"income"}
                 className={({ isActive }) => isActive ? "nav-link-active" : "nav-link"}
             >Income</NavLink>
+            <NavLink
+                to={"vans"}
+                className={({ isActive }) => isActive ? "nav-link-active" : "nav-link"}
+            >Vans</NavLink>
             <NavLink
                 to={"review"}
                 className={({ isActive }) => isActive ? "nav-link-active" : "nav-link"}

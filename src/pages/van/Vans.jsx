@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import "./styles.css"
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink, useSearchParams } from 'react-router-dom'
 
 const Vans = () => {
+
+  const[searchParams,setSearchParams]=useSearchParams();
+
   const [vans, setVans] = useState([])
+
+  //filtersection
+  const typeFilter=searchParams.get("type")
+  console.log(typeFilter)
 
   useEffect(() => {
     fetch("http://localhost:8080/vans")
@@ -11,7 +18,9 @@ const Vans = () => {
       .then(data => setVans(data))
 
   }, [])
-  const vanElements = vans?.map(({ id, name, price, imgUrl, type }) => (
+
+  const displayVans=typeFilter ? vans.filter(van=>van.type === typeFilter) : vans
+  const vanElements = displayVans?.map(({ id, name, price, imgUrl, type }) => (
     <div key={id} className='card'>
       <div class="overlay">
         <NavLink
@@ -30,6 +39,24 @@ const Vans = () => {
   return (
     <section className='vans-outer'>
       <h1>Explore our van options</h1>
+      <section className='d-flex gap-2'>
+        <Link 
+          to={"?type=simple"}
+          className='btn  btn-outline-primary'
+        >Simple</Link>
+        <Link 
+          to={"?type=rugged"}
+          className='btn btn-outline-primary'
+        >rugged</Link>
+        <Link 
+          to={"?type=luxury"}
+          className='btn btn-outline-primary'
+        >Luxury</Link>
+        <Link 
+          to={""}
+          className='btn btn-outline-primary'
+        >Clear</Link>
+      </section>
         <div className="cards-area">
           {vanElements}
         </div>

@@ -39,7 +39,7 @@ const AdminVanDetails = () => {
         to={`../..`}
         relative="path"
         className="back-button"
-      >&larr; <span>Back to  vans</span></NavLink>
+      >&larr; <span>Back to  All vans</span></NavLink>
       <h1>Van Details</h1>
       {van ?
       <div className="row">

@@ -10,9 +10,28 @@
        
    }
    
-   .nav-link:hover,.nav-link-active{
+   .nav-link:hover,.nav-link-active,.nav-link-item:hover{
        color: #e17055;
        font-weight: bold;
        text-decoration: none;
    }
    
+.my-vanDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.nav-link-item{
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    
+}
+
+.my-internal-header{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+}
