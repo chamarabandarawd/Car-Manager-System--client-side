@@ -40,7 +40,23 @@ const Vans = () => {
     <section className='vans-outer'>
       <h1>Explore our van options</h1>
       <section className='d-flex gap-2'>
-        <Link 
+        <button
+        className='btn btn-outline-primary'
+        onClick={()=>setSearchParams("?type=simple")}
+        > Simple</button>
+        <button
+        className='btn btn-outline-primary'
+        onClick={()=>setSearchParams("?type=rugged")}
+        > Rugged</button>
+        <button
+        className='btn btn-outline-primary'
+        onClick={()=>setSearchParams("?type=luxury")}
+        > Luxury</button>
+        <button
+        className='btn btn-outline-primary'
+        onClick={()=>setSearchParams("")}
+        > Clear</button>
+        {/* <Link 
           to={"?type=simple"}
           className='btn  btn-outline-primary'
         >Simple</Link>
@@ -55,7 +71,7 @@ const Vans = () => {
         <Link 
           to={""}
           className='btn btn-outline-primary'
-        >Clear</Link>
+        >Clear</Link> */}
       </section>
         <div className="cards-area">
           {vanElements}
