@@ -9,7 +9,7 @@ const VanDetails = () => {
     const [van, setVan] = useState(null)
 
     useEffect(() => {
-        fetch(`http://localhost:8080/vans/${id}`)
+        fetch(`http://51.20.64.107:8080/vans/${id}`)
             .then(res => res.json())
             .then(data => setVan(data))
     }, [id])

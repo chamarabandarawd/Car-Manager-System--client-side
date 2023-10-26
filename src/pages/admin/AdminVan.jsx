@@ -10,19 +10,19 @@ const AdminVan = () => {
     const [vans, setVans] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/vans")
+        fetch("http://51.20.64.107:8080/vans")
             .then(res => res.json())
             .then(data => setVans(data))
 
     }, [vans])
 
     function deleteHandle(id){
-        fetch(`http://localhost:8080/vans/${id}`,{
+        fetch(`http://51.20.64.107:8080/vans/${id}`,{
             method:"DELETE",
         }).then(res=>{
       
             if(res.status===200){       
-            fetch("http://localhost:8080/vans")
+            fetch("http://51.20.64.107:8080/vans")
             .then(res => res.json())
             .then(data => setVans(data))
             alert(`${id} will be deleted!`);

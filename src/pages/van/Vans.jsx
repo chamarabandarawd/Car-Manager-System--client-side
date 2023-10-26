@@ -4,7 +4,7 @@ import { Link, NavLink, useSearchParams } from 'react-router-dom'
 
 const Vans = () => {
 
-  // const[searchParams,setSearchParams]=useSearchParams();
+  const[searchParams,setSearchParams]=useSearchParams();
 
   const [vans, setVans] = useState([])
 
@@ -13,7 +13,7 @@ const Vans = () => {
   console.log(typeFilter)
 
   useEffect(() => {
-    fetch("http://localhost:8080/vans")
+    fetch("http://51.20.64.107:8080/vans")
       .then(res => res.json())
       .then(data => setVans(data))
 

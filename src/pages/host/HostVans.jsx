@@ -7,7 +7,7 @@ const HostVans = () => {
     const [vans, setVans] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/vans/host")
+        fetch("http://51.20.64.107:8080/vans/host")
             .then(res => res.json())
             .then(data => setVans(data))
 

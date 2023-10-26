@@ -11,7 +11,7 @@ const AddVehicle = () => {
   
   
     const handleSave = () => {
-      fetch('http://localhost:8080/vans', {
+      fetch('http://51.20.64.107:8080/vans', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
