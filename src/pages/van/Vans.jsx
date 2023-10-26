@@ -36,23 +36,23 @@ const Vans = () => {
     </div>
   ))
 
-  // const hanadleFilterChainge=(key,value)=>{
-  //   setSearchParams(prevParam=>{
-  //     if(value===null){
-  //       prevParam.delete(key)
-  //     }else{
-  //       prevParam.set(key,value)
-  //     }
-  //     console.log(prevParam)
-  //     return prevParam
-  //   })
-  // }
+  const hanadleFilterChainge=(key,value)=>{
+    setSearchParams(prevParam=>{
+      if(value===null){
+        prevParam.delete(key)
+      }else{
+        prevParam.set(key,value)
+      }
+      console.log(prevParam)
+      return prevParam
+    })
+  }
 
   return (
     <section className='vans-outer'>
       <h1>Explore our van options</h1>
       <section className='d-flex gap-2'>
-        {/* <button
+        <button
         className='btn btn-outline-primary'
         onClick={()=>hanadleFilterChainge("type","simple")}
         > Simple</button>
@@ -64,11 +64,11 @@ const Vans = () => {
         className='btn btn-outline-primary'
         onClick={()=>hanadleFilterChainge("type","luxury")}
         > Luxury</button>
-        <button
+        {/* <button
         className='btn btn-outline-primary'
         onClick={()=>setSearchParams("type",null)}
         > Clear</button> */}
-        <Link 
+        {/* <Link 
           to={"?type=simple"}
           className='btn  btn-outline-primary'
         >Simple</Link>
@@ -79,7 +79,7 @@ const Vans = () => {
         <Link 
           to={"?type=luxury"}
           className='btn btn-outline-primary'
-        >Luxury</Link>
+        >Luxury</Link> */}
         <Link 
           to={""}
           className='btn btn-outline-primary'
