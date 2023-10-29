@@ -13,7 +13,7 @@ const Vans = () => {
   console.log(typeFilter)
 
   useEffect(() => {
-    fetch("http://51.20.64.107:8080/vans")
+    fetch("https://13.53.133.9:7777/vans")
       .then(res => res.json())
       .then(data => setVans(data))
 
