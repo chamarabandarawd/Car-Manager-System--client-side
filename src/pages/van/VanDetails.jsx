@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink, useLocation, useParams } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
 import "./styles.css"
 
 const VanDetails = () => {
 
+
     const { id } = useParams();
+    const location=useLocation();
     const [van, setVan] = useState(null)
 
     useEffect(() => {
-        fetch(`https://13.53.133.9:7777/vans/${id}`)
+        fetch(`http://localhost:8080/vans/${id}`)
             .then(res => res.json())
             .then(data => setVan(data))
     }, [id])
 
-    console.log(van)
+
+
+    const search=location.state && location.state.search || ""
+    const type=location.state && location.state.search || "all"
     return (
         <section className='vansDetails-outer'>
             <NavLink
-                to={`..`}
+                to={`..?${search}`}
                 relative="path"
                 className="back-button"
-            >&larr; <span>Back to  vans</span></NavLink>
+            >&larr; <span>Back to all vans</span></NavLink>
             <h1>Van Details</h1>
             {van ?
                 <div className="vanDetails-inner">

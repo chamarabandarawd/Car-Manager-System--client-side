@@ -10,14 +10,13 @@ const Vans = () => {
 
   //filtersection
   const typeFilter=searchParams.get("type")
-  console.log(typeFilter)
-
   useEffect(() => {
-    fetch("https://13.53.133.9:7777/vans")
+    fetch("http://localhost:8080/vans")
       .then(res => res.json())
       .then(data => setVans(data))
 
-  }, [])
+  }, [searchParams])
+
 
   const displayVans=typeFilter ? vans.filter(van=>van.type === typeFilter) : vans
   const vanElements = displayVans?.map(({ id, name, price, imgUrl, type }) => (
@@ -25,6 +24,7 @@ const Vans = () => {
       <div class="overlay">
         <NavLink
           to={`/vans/${id}`}
+          state={{search:searchParams.toString()}}
           className="overflow-button">
           More Info.
         </NavLink></div>
@@ -42,8 +42,9 @@ const Vans = () => {
         prevParam.delete(key)
       }else{
         prevParam.set(key,value)
+
       }
-      console.log(prevParam)
+      console.log("this",prevParam)
       return prevParam
     })
   }
@@ -80,10 +81,12 @@ const Vans = () => {
           to={"?type=luxury"}
           className='btn btn-outline-primary'
         >Luxury</Link> */}
-        <Link 
-          to={""}
-          className='btn btn-outline-primary'
-        >Clear</Link>
+        {typeFilter? 
+         <Link 
+         to={""}
+         className='btn btn-outline-primary'
+       >Clear</Link> : null}
+       
       </section>
         <div className="cards-area">
           {vanElements}

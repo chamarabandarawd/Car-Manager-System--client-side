@@ -10,14 +10,14 @@ const AdminVanDetails = () => {
   const [van, setVan] = useState(null)
 
   useEffect(() => {
-    fetch(`https://13.53.133.9:7777/vans/${id}`)
+    fetch(`http://localhost:8080/vans/${id}`)
       .then(res => res.json())
       .then(data => setVan(data))
   }, [id])
 
 
   const handleSave = () => {
-    fetch('https://13.53.133.9:7777/vans', {
+    fetch('http://localhost:8080/vans', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

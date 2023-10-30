@@ -20,6 +20,7 @@ import HostVanDetails from "./pages/host/HostVanDetails";
 import VanInfo from "./pages/host/VanInfo";
 import VanPhotos from "./pages/host/VanPhotos";
 import VanPricing from "./pages/host/VanPricing";
+import PageNotFount from "./componets/PageNotFount";
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             <Route path="vans/:id" element={<AdminVanDetails />} />
 
           </Route>
+          <Route path="*" element={<PageNotFount/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
