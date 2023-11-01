@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import "./styles.css"
-import { Link, NavLink, useSearchParams } from 'react-router-dom'
+import { Link, NavLink, useSearchParams ,useLoaderData} from 'react-router-dom'
+import { getVans } from '../../api'
+
 
 const Vans = () => {
 
+  const [vans, setVans] = useState(null)
   const[searchParams,setSearchParams]=useSearchParams();
-
-  const [vans, setVans] = useState([])
-
-  //filtersection
-  const typeFilter=searchParams.get("type")
+  
   useEffect(() => {
     fetch("http://localhost:8080/vans")
       .then(res => res.json())
       .then(data => setVans(data))
+  }, [searchParams]);
 
-  }, [searchParams])
+  const typeFilter =searchParams.get("type")
 
+  const displayVans= typeFilter ? vans?.filter(van=>van.type === typeFilter) : vans
 
-  const displayVans=typeFilter ? vans.filter(van=>van.type === typeFilter) : vans
   const vanElements = displayVans?.map(({ id, name, price, imgUrl, type }) => (
     <div key={id} className='card'>
       <div class="overlay">
