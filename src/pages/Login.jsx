@@ -1,8 +1,14 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import React, { useEffect, useState } from "react"
+import { useLoaderData, useLocation} from "react-router-dom"
+
+export async function loader({location}){
+    return null
+}
 
 export default function Login() {
     const [loginFormData, setLoginFormData] = useState({ email: "", password: "" })
+    const location = useLocation();
+    const message="";
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -19,6 +25,7 @@ export default function Login() {
 
     return (
         <div className="login-container container ">
+            {message && <h1>{message}</h1>}
             <h1>Sign in to your account</h1>
             <form onSubmit={handleSubmit} className="login-form">
                 <input

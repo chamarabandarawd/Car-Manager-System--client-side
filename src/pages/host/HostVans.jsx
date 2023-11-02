@@ -3,8 +3,10 @@ import { Row } from 'react-bootstrap';
 import "./styles.css"
 import { NavLink, useLoaderData } from 'react-router-dom';
 import { getHostVans } from '../../api';
+import { requireAuth } from '../../utils/utils';
 
-export const loader=()=>{
+export async function loader(){
+    await requireAuth();
     return getHostVans()
 }
 

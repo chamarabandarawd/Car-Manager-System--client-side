@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Row } from 'react-bootstrap'
 import { NavLink, Outlet, useLoaderData, useParams } from 'react-router-dom'
 import { getVan } from '../../api'
+import { requireAuth } from '../../utils/utils'
 
 
-export const loader=({params})=>{
+export async function loader({params}){
+  await requireAuth();
   return getVan(params.id)
 }
 
