@@ -5,7 +5,7 @@ import HostLayout from "./pages/host/HostLayout";
 import About from "./pages/About";
 import Vans,{loader as vansLoader } from "./pages/van/Vans";
 import Cars from "./pages/cars/Cars";
-import VanDetails from "./pages/van/VanDetails";
+import VanDetails ,{loader as vanDetailsLoader} from "./pages/van/VanDetails";
 import Rent from "./pages/Rent";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminVan from "./pages/admin/AdminVan";
@@ -37,7 +37,11 @@ const router= createBrowserRouter(createRoutesFromElements(
           element={<Vans />} 
           loader={vansLoader}
           />
-          <Route path="vans/:id" element={<VanDetails />} />
+          <Route 
+          path="vans/:id" 
+          element={<VanDetails />} 
+          loader={vanDetailsLoader}
+          />
           <Route path="cars" element={<Cars />} />
           <Route path="rent" element={<Rent />} />
           <Route path="login" element={<Login />} />

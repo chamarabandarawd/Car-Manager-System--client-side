@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink, useLocation, useParams } from 'react-router-dom'
+import { NavLink, useLoaderData, useLocation, useParams } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
 import "./styles.css"
 import { getVan } from '../../api';
@@ -11,17 +11,8 @@ export const loader = ({params})=>{
 
 const VanDetails = () => {
 
-
-    const { id } = useParams();
     const location=useLocation();
-    const [van, setVan] = useState(null)
-
-    useEffect(() => {
-
-
-    }, [id])
-
-
+    const van =useLoaderData();
 
     const search=location.state && location.state.search || ""
     const type=location.state && location.state.search || "all"
