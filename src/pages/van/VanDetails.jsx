@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { NavLink, useLocation, useParams } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
 import "./styles.css"
+import { getVan } from '../../api';
+
+export const loader = ({params})=>{
+    console.log(params)
+    return getVan(params.id)
+}
 
 const VanDetails = () => {
 
@@ -11,9 +17,8 @@ const VanDetails = () => {
     const [van, setVan] = useState(null)
 
     useEffect(() => {
-        fetch(`http://localhost:8080/vans/${id}`)
-            .then(res => res.json())
-            .then(data => setVan(data))
+
+
     }, [id])
 
 

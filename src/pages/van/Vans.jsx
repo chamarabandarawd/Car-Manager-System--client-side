@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import "./styles.css"
 import { Link, NavLink, useSearchParams ,useLoaderData} from 'react-router-dom'
 import { getVans } from '../../api'
 
 
+
+export const loader=()=>{
+  return getVans();
+}
+
+
 const Vans = () => {
 
-  const [vans, setVans] = useState(null)
   const[searchParams,setSearchParams]=useSearchParams();
-  
-  useEffect(() => {
-    fetch("http://localhost:8080/vans")
-      .then(res => res.json())
-      .then(data => setVans(data))
-  }, [searchParams]);
+
+
+  const vans=useLoaderData()
+  console.log(vans)
+
 
   const typeFilter =searchParams.get("type")
 
@@ -47,6 +51,10 @@ const Vans = () => {
       console.log("this",prevParam)
       return prevParam
     })
+  }
+
+  if(error){
+    return <h1>There is an error : {error.message}</h1>
   }
 
   return (
