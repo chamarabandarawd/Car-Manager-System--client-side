@@ -15,8 +15,8 @@ import AddVehicle from "./pages/admin/AddVehicle";
 import DashBoard from "./pages/host/DashBoard";
 import Income from "./pages/host/Income";
 import { Reviews } from "@mui/icons-material";
-import HostVans from "./pages/host/HostVans";
-import HostVanDetails from "./pages/host/HostVanDetails";
+import HostVans,{loader as hostVanLoader} from "./pages/host/HostVans";
+import HostVanDetails,{loader as hostVanDetails} from "./pages/host/HostVanDetails";
 import VanInfo from "./pages/host/VanInfo";
 import VanPhotos from "./pages/host/VanPhotos";
 import VanPricing from "./pages/host/VanPricing";
@@ -75,17 +75,13 @@ const router= createBrowserRouter(createRoutesFromElements(
             <Route
               path="vans"
               element={<HostVans />} 
-             loader={async ()=>{
-              return null
-             }}
+             loader={hostVanLoader}
               />
 
             <Route
               path={"vans/:id"}
               element={<HostVanDetails />} 
-              loader={async ()=>{
-                return null
-              }}
+              loader={hostVanDetails}
               >
 
               <Route

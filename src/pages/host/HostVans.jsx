@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { Row } from 'react-bootstrap';
 import "./styles.css"
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLoaderData } from 'react-router-dom';
+import { getHostVans } from '../../api';
+
+export const loader=()=>{
+    return getHostVans()
+}
 
 const HostVans = () => {
-    const [vans, setVans] = useState([]);
 
-    useEffect(() => {
-        fetch("http://localhost:8080/vans")
-            .then(res => res.json())
-            .then(data => setVans(data))
+    const vans = useLoaderData();
 
-    }, [vans])
+
     return (
         <section className='container'>
             {vans.map(({ id, imgUrl, name, price }) => (

@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Row } from 'react-bootstrap'
-import { NavLink, Outlet, useParams } from 'react-router-dom'
+import { NavLink, Outlet, useLoaderData, useParams } from 'react-router-dom'
+import { getVan } from '../../api'
+
+
+export const loader=({params})=>{
+  return getVan(params.id)
+}
 
 const HostVanDetails = () => {
-  const { id } = useParams()
-  const [van, setVan] = useState(null)
 
-  useEffect(() => {
-    fetch(`http://localhost:8080/vans/${id}`)
-      .then(res => res.json())
-      .then(data => setVan(data))
-  }, [id])
+  const van=useLoaderData();
+
   return (
     <section className='container'>
 
@@ -34,17 +35,17 @@ const HostVanDetails = () => {
         <div className="  my-internal-header">
           <NavLink
             end
-            to={`/host/vans/${id}`}
+            to={`/host/vans/${van.id}`}
             className={({ isActive }) => isActive ? "nav-link-active" : "nav-link"}
           >Details
           </NavLink>
           <NavLink
-            to={`/host/vans/${id}/pricing`}
+            to={`/host/vans/${van.id}/pricing`}
             className={({ isActive }) => isActive ? "nav-link-active" : "nav-link"}
           >Pricing
           </NavLink>
           <NavLink
-            to={`/host/vans/${id}/photos`}
+            to={`/host/vans/${van.id}/photos`}
             className={({ isActive }) => isActive ? "nav-link-active" : "nav-link"}
           >Photos
           </NavLink>
