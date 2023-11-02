@@ -43,3 +43,27 @@ export async function getHostVans() {
     return data;
 
 }
+
+export async function loginUser(creds){
+    console.log(creds)
+    const res= await fetch("http://localhost:8080/user/login",
+    {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+        method:"POST",
+        body:JSON.stringify(creds)
+    })
+    const data=await res.json()
+    if(!res.ok){
+        throw {
+            message : "No found user...",
+            statusText:data.statusText,
+            status:data.status
+        }
+    }
+
+    return data;
+
+}
