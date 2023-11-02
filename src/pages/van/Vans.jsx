@@ -53,10 +53,6 @@ const Vans = () => {
     })
   }
 
-  if(error){
-    return <h1>There is an error : {error.message}</h1>
-  }
-
   return (
     <section className='vans-outer'>
       <h1>Explore our van options</h1>
