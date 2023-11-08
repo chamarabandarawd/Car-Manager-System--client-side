@@ -7,7 +7,8 @@ import { requireAuth } from '../../utils/utils'
 
 export async function loader({params}){
   await requireAuth();
-  return getVan(params.id)
+   return getVan(params.id)
+
 }
 
 const HostVanDetails = () => {

@@ -12,18 +12,19 @@ import AdminVan from "./pages/admin/AdminVan";
 import AdminCar from "./pages/admin/AdminCar";
 import AdminVanDetails from "./pages/admin/AdminVanDetails";
 import AddVehicle from "./pages/admin/AddVehicle";
-import DashBoard from "./pages/host/DashBoard";
-import Income from "./pages/host/Income";
-import { Reviews } from "@mui/icons-material";
+import DashBoard ,{loader as hostDashBoardLoader} from "./pages/host/DashBoard";
+import Income ,{loader as hostIncomeLoader} from "./pages/host/Income";
+// import  {Reviews, loader as HostReviewLoader}  from "@mui/icons-material";
 import HostVans,{loader as hostVanLoader} from "./pages/host/HostVans";
 import HostVanDetails,{loader as hostVanDetails} from "./pages/host/HostVanDetails";
 import VanInfo from "./pages/host/VanInfo";
 import VanPhotos from "./pages/host/VanPhotos";
 import VanPricing from "./pages/host/VanPricing";
 import PageNotFount from "./componets/PageNotFount";
-import Login , {loader as loginLoader} from "./pages/Login";
+import Login , {loader as loginLoader, action as logingAction} from "./pages/Login";
 import MyError from "./componets/MyError";
 import { requireAuth } from "./utils/utils";
+import Reviews from "./pages/host/Reviews";
 
 
 const router= createBrowserRouter(createRoutesFromElements(
@@ -49,6 +50,7 @@ const router= createBrowserRouter(createRoutesFromElements(
           path="login" 
           element={<Login />} 
           loader={loginLoader}
+          action={logingAction}
           />
 
 
@@ -57,7 +59,7 @@ const router= createBrowserRouter(createRoutesFromElements(
             <Route
               index
               element={<DashBoard />}
-             loader={async ()=> await requireAuth()}
+              loader={async ()=> await requireAuth()}
               />
 
             <Route
@@ -86,13 +88,13 @@ const router= createBrowserRouter(createRoutesFromElements(
               <Route
                 index
                 element={<VanInfo />}
-                loader={async ()=> await requireAuth()} 
+                loader={async ()=> await requireAuth()}
                 />
 
               <Route
                 path="pricing"
                 element={<VanPricing />}
-                loader={async ()=> await requireAuth()}  
+                loader={async ()=> await requireAuth()}
                 />
 
               <Route
