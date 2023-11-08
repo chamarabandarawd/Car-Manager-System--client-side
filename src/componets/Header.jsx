@@ -1,9 +1,14 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-
+import { NavLink, redirect } from 'react-router-dom'
+import LogoutIcon from '@mui/icons-material/Logout';
 import "./styles.css"
 
 const Header = () => {
+const fackLogout=()=>{
+    localStorage.removeItem("loggedin")
+    return redirect("/")
+}
+
     return (
         <header className='my-header'>
             <div className="logo">TravelFlex</div>
@@ -32,6 +37,7 @@ const Header = () => {
                     to={"/admin"}
                     className={({isActive})=>isActive ? "nav-link-active" : "nav-link"}
                 >Admin Dashboard</NavLink>
+                <button className='nav-link' onClick={()=>fackLogout()}><LogoutIcon/></button>
             </div>
         </header>
     )

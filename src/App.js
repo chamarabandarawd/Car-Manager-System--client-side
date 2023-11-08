@@ -25,6 +25,8 @@ import Login , {loader as loginLoader, action as logingAction} from "./pages/Log
 import MyError from "./componets/MyError";
 import { requireAuth } from "./utils/utils";
 import Reviews from "./pages/host/Reviews";
+// localStorage.removeItem("loggedin")
+
 
 
 const router= createBrowserRouter(createRoutesFromElements(
