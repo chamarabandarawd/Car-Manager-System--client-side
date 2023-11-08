@@ -70,3 +70,18 @@
   .about-outer>h1{
     padding-top: 20px;
   }
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5 px;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  .login-F{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }

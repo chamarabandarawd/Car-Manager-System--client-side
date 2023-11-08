@@ -55,15 +55,13 @@ export async function loginUser(creds){
         method:"POST",
         body:JSON.stringify(creds)
     })
-    const data=await res.json()
+
     if(!res.ok){
         throw {
             message : "No found user...",
-            statusText:data.statusText,
-            status:data.status
         }
     }
-
+    const data=await res.json()
     return data;
 
 }
